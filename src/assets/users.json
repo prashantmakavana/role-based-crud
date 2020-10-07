@@ -1,0 +1,31 @@
+ [
+      {
+        "name": "Abhi",
+        "mobile": "765755668",
+        "email": "from@gmail.com",
+        "address": "Puna"
+       
+      },
+      {
+        "name": "Shyam",
+        "mobile": "999999999",
+        "email": "Shyam@yahoo.in",
+        "address": "Puna"
+      
+      },
+      {
+        "name": "Deep",
+        "mobile": "98989989898",
+        "email": "deep@gmail.com",
+        "address": "Puna"
+        
+      },
+      {
+        "name": "Smit",
+        "mobile": "98989989898",
+        "email": "smit@gmail.com",
+        "address": "Puna"
+        
+      }
+]
+  

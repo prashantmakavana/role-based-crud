@@ -1,0 +1,101 @@
+.box {
+	background-color: var(--surface-e);
+	text-align: center;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	border-radius: 4px;
+	box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+}
+.box-stretched {
+	height: 100%;
+}
+.vertical-container {
+	margin: 0;
+	height: 200px;
+	background: var(--surface-d);
+	border-radius: 4px;
+}
+.nested-grid {
+	.p-col-4 {
+		padding-bottom: 1rem;
+	}
+}
+
+
+// :host ::ng-deep .priority-2,
+// :host ::ng-deep .priority-3,
+// :host ::ng-deep .visibility-sm {
+// 	display: none;
+// }
+
+// @media screen and (max-width: 39.938em) {
+// 	:host ::ng-deep .visibility-sm {
+// 		display: inline;
+// 	}
+// }
+
+// @media screen and (min-width: 40em) {
+// 	:host ::ng-deep .priority-2 {
+// 		display: table-cell;
+// 	}
+// }
+
+// @media screen and (min-width: 64em) {
+// 	:host ::ng-deep .priority-3 {
+// 		display: table-cell;
+// 	}
+// }
+
+
+.kb-row {
+	background-color: #1CA979 !important;
+	color: #ffffff !important;
+}
+
+:host ::ng-deep .kb-row .ui-treetable-toggler {
+	color: #ffffff !important;
+}
+
+.kb-cell {
+	background-color: #2CA8B1 !important;
+	color: #ffffff !important;
+}
+
+.ui-dropdown-panel {
+	position: absolute;
+	height: auto;
+}
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    vertical-align: middle;
+    min-width: 12.5em;
+}
+
+.dropdown-panel {
+    position: absolute;
+    height: auto;
+}
+
+.dropdown-items {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.multiselectDropdown {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    vertical-align: middle;
+    min-width: 12.5em;
+}
+
+
+.multiselect-item {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}

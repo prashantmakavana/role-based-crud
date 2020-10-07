@@ -1,0 +1,28 @@
+<div class="test-container">
+    <!-- <div class="test-header">
+        <button (click)="onBtExcludeMedalColumns()">Exclude Medal Columns</button>
+        <button (click)="onBtIncludeMedalColumns()">Include Medal Columns</button>
+      </div> -->
+      <!-- <div style="margin-bottom: 5px; min-height: 30px;">
+        <button (click)="reverseItems()">Reverse</button>
+      </div> -->
+      <div class="example-header">
+        Selection:
+        <span id="selectedRows"></span>
+      </div>
+    <ag-grid-angular
+    #agGrid
+    style="height: 515px; width:602px;"
+    class="ag-theme-alpine"
+    [columnDefs]="columnDefs"
+    [rowData]="rowData"
+    [pagination]="true"
+    [paginationAutoPageSize]="true"
+    [defaultColDef]="defaultColDef"
+    [rowSelection]="rowSelection"
+    (selectionChanged)="onSelectionChanged($event)"
+    (gridReady)="onGridReady($event)"
+    >
+    </ag-grid-angular>
+</div>
+

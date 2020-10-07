@@ -1,0 +1,137 @@
+<!-- Prime NG HTML Control Start -->
+
+<!-- <div class="abc-checkbox abc-checkbox-danger">
+        <input type="checkbox" id="simpleInput" [ngModel]="value">
+        <label for="simpleInput">Set value</label>
+      </div> -->
+
+<!-- <div class="row">
+    <div class="col-12">
+        <div class="container"> -->
+            <!-- Prime Ng Input -->
+            <!-- <div>
+                <input type="text" pInputText class="p-inputtext-sm" placeholder="Small">
+                <input type="text" pInputText class="p-inputtext-lg" placeholder="Large">
+            </div> -->
+            <!-- Prime Ng Button -->
+            <!-- <br>
+            <div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-2 col-md-2">
+                            <button pButton type="button" icon="pi pi-check" class="col-3" label="Secondary"
+                            class="p-button-secondary"></button>
+                        </div>
+                        <div class="col-2 col-md-2">
+                            <button disabled pButton type="button" label="Success" class="p-button-success"></button>
+                        </div>
+                        <div class="col-2 col-md-2">
+                            <button pButton type="button" label="Warning" class="p-button-warning"></button>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+             <!-- Prime Ng Card -->
+             <!-- <br>
+             <div>
+                <p-card  header="Dashboard" [style]="{width: '360px'}">
+                    <div style="line-height:1.5" class="col-3">Dashboard Data</div>
+                </p-card>
+             </div> -->
+            <!-- Prime Ng Grid System -->
+            <!-- <br>
+            <div>
+                <div class="p-grid">
+                    <div class="p-col">
+                        <div class="box">1</div>
+                    </div>
+                    <div class="p-col">
+                        <div class="box">2</div>
+                    </div>
+                    <div class="p-col">
+                        <div class="box">3</div>
+                    </div>
+                </div>                
+            </div> -->
+        <!-- </div>
+    </div>
+</div> -->
+<!-- Prime NG HTML Control End -->
+
+<!-- Tree Table Start -->
+<p-treeTable #tt [value]="files" [columns]="selectedColumns" [paginator]="true" [rows]="5" selectionMode="checkbox" [(selection)]="selectedNodes3" >
+    <!-- Checkbox Selection s -->
+    <!-- <ng-template pTemplate="caption">
+        <div class="p-d-flex">
+            <p-treeTableHeaderCheckbox></p-treeTableHeaderCheckbox>
+            <span class="p-ml-2">Toggle All</span>
+        </div>
+    </ng-template> -->
+     <!-- Checkbox Selection e -->
+    <!-- Global filter s -->
+    <ng-template pTemplate="caption">
+        <div style="text-align: right">        
+            <i class="pi pi-search" style="margin:4px 4px 0 0"></i>
+            <input type="text" pInputText size="20" placeholder="Global Filter" (input)="tt.filterGlobal($event.target.value, 'contains')" style="width:auto">
+        </div>
+        <div style="text-align:left">
+            <p-multiSelect [options]="cols" [(ngModel)]="selectedColumns" optionLabel="header"
+                        selectedItemsLabel="{0} columns selected" [style]="{'width': '20em'}" defaultLabel="Choose Columns"></p-multiSelect>
+        </div>
+    </ng-template>
+    <!-- Global filter e -->
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+            <th *ngFor="let col of columns" [ttSortableColumn]="col.field">
+                {{col.header}}
+                <!-- Sorting icon at column name -->
+                <p-treeTableSortIcon [field]="col.field"></p-treeTableSortIcon>
+            </th>
+        </tr>
+        <!-- filter s -->
+        <tr>
+            <th *ngFor="let col of cols">
+                <input pInputText type="text" (input)="tt.filter($event.target.value, col.field, col.filterMatchMode)">
+            </th>
+        </tr>
+        <!-- filter e -->
+    </ng-template>
+    <ng-template pTemplate="body" let-rowNode let-rowData="rowData" let-columns="columns">
+        <tr [ngClass]="{'kb-row': rowData.size.endsWith('mb')}">
+            <td *ngFor="let col of columns; let i = index">
+                <p-treeTableToggler [rowNode]="rowNode" *ngIf="i == 0"></p-treeTableToggler>
+                <p-treeTableCheckbox [value]="rowNode" *ngIf="i == 0"></p-treeTableCheckbox>
+                {{rowData[col.field]}}
+            </td>
+            <!-- <td>{{rowData.name}}</td>
+            <td [ngClass]="{'kb-cell': rowData.size.endsWith('mb')}">{{rowData.size}}</td>
+            <td> <span class="p-tag">{{rowData.category}}</span></td> -->
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+        <tr>        
+            <td [attr.colspan]="cols.length">No data found.</td>
+        </tr>
+    </ng-template>
+</p-treeTable>
+<!-- Tree Table End -->
+
+<br><br>
+
+<h5>Single</h5>
+<div class="row">
+    <p>Selected City: {{selectedCity1 ? selectedCity1.name : 'none'}}</p>
+</div>
+<div class="row">
+    <div class="dropdown dropdown-items">
+    <p-dropdown [options]="cities" [editable]="editable" class="dropdown-items"  (click)="onCitySelect(cities)" [(ngModel)]="selectedCity1" placeholder="Select a City" optionLabel="name" [showClear]="true"></p-dropdown>
+    </div>
+</div>
+<br><br>
+
+<h5>MultiSelect</h5>
+<div class="row multiselectDropdown">
+    <p-multiSelect [options]="countries" class="multiselect-item" (click)="onOptionClick($event)" [(ngModel)]="selectedCountries1" defaultLabel="Select a City" optionLabel="name"></p-multiSelect>
+</div>
+
+

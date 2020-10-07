@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+       
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+          <ul class="navbar-nav">
+            <li class="nav-item" *ngIf="isAuthorized">
+              <a class="nav-link"  routerLink="/dashboard">Dashboard</a>
+            </li>
+
+            <li class="nav-item" *ngIf="isAuthorized">
+              <a class="nav-link" routerLink="/form">Form</a>
+            </li>
+
+             <li class="nav-item" *ngIf="isAuthorized">
+              <a class="nav-link"  routerLink="/reactiveFormPage">ReactiveForm</a>
+            </li>
+
+            <li class="nav-item" *ngIf="isAdmin">
+              <a class="nav-link" routerLink="/ngrx-user-list">NGRX</a>
+            </li>
+
+            <li class="nav-item" *ngIf="isAuthorized">
+              <a class="nav-link"  routerLink="/primeNg">PrimeNG</a>
+            </li>
+
+            <li class="nav-item"  *ngIf="isAdmin">
+              <a class="nav-link"  routerLink="/grid">AgGrid</a>
+            </li>
+
+            <li class="nav-item" *ngIf="!isAuthorized">
+              <a class="nav-link"  routerLink="/login">Login</a>
+            </li>
+
+            <li class="nav-item" *ngIf="isAuthorized">
+              <a class="nav-link" (click)="logout()">Logout</a>
+            </li>
+
+          
+          </ul>
+<!-- 
+          <p-tabView>
+            <p-tabPanel header="Dashboard" routerLink="/dashboard">
+              
+            </p-tabPanel>
+            <p-tabPanel header="Form"  routerLink="/form">
+              
+            </p-tabPanel>
+            <p-tabPanel header="ReactiveForm" routerLink="/reactiveFormPage">
+              
+            </p-tabPanel>
+            <p-tabPanel header="NGRX" routerLink="/ngrx-user-list">
+              
+            </p-tabPanel>
+            <p-tabPanel header="PrimeNG" routerLink="/primeNg">
+              
+            </p-tabPanel>
+        </p-tabView> -->
+
+        </div>
+      </nav>
+      <br>
+
+    <router-outlet></router-outlet>

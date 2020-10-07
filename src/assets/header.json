@@ -1,0 +1,11 @@
+[
+    {  "field": "name", 
+       "header": "Name"
+    },
+    {   "field": "size", 
+        "header": "Size"
+    },
+    {   "field": "category", 
+        "header": "Category"
+    }
+  ]

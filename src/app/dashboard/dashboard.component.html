@@ -1,0 +1,73 @@
+<p-toast></p-toast>
+
+<!-- <div>
+  <p-pickList
+    [source]="sourceProducts"
+    [target]="targetProducts"
+    sourceHeader="Available"
+    targetHeader="Selected"
+    dragdrop="true"
+    [responsive]="true"
+    [sourceStyle]="{ height: '300px' }"
+    [targetStyle]="{ height: '300px' }"
+    filterBy="name"
+    sourceFilterPlaceholder="Search by name"
+    targetFilterPlaceholder="Search by name"
+  >
+    <ng-template let-product pTemplate="item">
+      <div class="product-item">
+        <div class="product-list-detail">
+          <h5 class="p-mb-2">{{ product.name }}</h5>
+          <i class="pi pi-tag product-category-icon"></i>
+          <span class="product-category">{{ product.category }}</span>
+        </div>
+        <div class="product-list-action">
+          <h6 class="p-mb-2">${{ product.price }}</h6>
+          <span
+            [class]="
+              'product-badge status-' + product.inventoryStatus.toLowerCase()
+            "
+            >{{ product.inventoryStatus }}</span
+          >
+        </div>
+      </div>
+    </ng-template>
+  </p-pickList>
+</div> -->
+<br>
+<!-- <div class="content-section implementation">
+    <div class="card">
+        <p-fullCalendar  [events]="events" [options]="options"></p-fullCalendar>
+    </div>
+</div>
+<br>
+<div class="card">
+    <p-fileUpload name="demo[]" url="./upload.php" (onUpload)="onUpload($event)"
+      multiple="multiple" accept="image/*" maxFileSize="1000000">
+      <ng-template pTemplate="content">
+          <ul *ngIf="uploadedFiles.length">
+              <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
+          </ul>
+      </ng-template>
+    </p-fileUpload>
+</div> -->
+
+<form>
+  <div class="form-group">
+  <p-fileUpload #fileInput name="file" multiple="multiple" [showUploadButton]="false" [showCancelButton]="false"
+  maxFileSize="2000000" accept="image/*,.csv,.xml,.doc,.docx,.pdf">
+  <ng-template pTemplate="content">
+  <div class="ui-fileupload-row" *ngFor="let file of attachments; let i = index;">
+    <div><img [src]="file.objectURL" *ngIf="uploadService.isImage(file)" />
+    </div>
+    <div class="uploaded-file" (click)="uploadService.downloadFile(attachments, i)">
+    {{file.uploadname}}  {{file.uploadtime}}</div>
+    <div>
+    <button type="button" class="btn-xs btn-danger confirm-btn"
+    (click)="deleteFile(attachments, i)">Delete</button>
+    </div>
+  </div>
+  </ng-template>
+  </p-fileUpload>
+  </div>
+  </form>
